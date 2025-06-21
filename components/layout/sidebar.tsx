@@ -57,7 +57,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   ]
 
   return (
-    <div className={`bg-white border-r border-gray-200 transition-all duration-300 ${collapsed ? "w-16" : "w-64"}`}>
+    <div className={`h-screen bg-white border-r border-gray-200 transition-all duration-300 ${collapsed ? "w-16" : "w-64"} flex flex-col sticky top-0`}>
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           {!collapsed && (
@@ -85,9 +85,8 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               <Button
                 key={item.id}
                 variant={isActive ? "default" : "ghost"}
-                className={`w-full justify-start h-11 ${
-                  isActive ? "bg-indigo-600 text-white hover:bg-indigo-700" : "text-gray-700 hover:bg-gray-100"
-                } ${collapsed ? "px-2" : "px-3"}`}
+                className={`w-full justify-start h-11 ${isActive ? "bg-indigo-600 text-white hover:bg-indigo-700" : "text-gray-700 hover:bg-gray-100"
+                  } ${collapsed ? "px-2" : "px-3"}`}
                 onClick={() => setActiveTab(item.id)}
               >
                 <Icon className={`h-5 w-5 ${collapsed ? "" : "mr-3"}`} />

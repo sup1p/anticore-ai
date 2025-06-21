@@ -88,7 +88,7 @@ export default function FraudDetectionSystem() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Панель управления</h1>
-            <p className="text-gray-600 mt-1">Мониторинг системы детекции мошенничества в реальном времени</p>
+            <p className="text-gray-600 mt-1">Мониторинг системы детекции коррупционных рисков в реальном времени</p>
           </div>
           <div className="flex space-x-3">
             <Button variant="outline" onClick={loadData} disabled={loading}>
@@ -166,7 +166,7 @@ export default function FraudDetectionSystem() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Система детекции</h1>
-            <p className="text-gray-600 mt-1">ИИ-алгоритмы для выявления мошенничества</p>
+            <p className="text-gray-600 mt-1">ИИ-алгоритмы для выявления коррупционных рисков</p>
           </div>
           <Badge variant="secondary" className="bg-green-100 text-green-800">
             <Zap className="h-3 w-3 mr-1" />
@@ -198,9 +198,8 @@ export default function FraudDetectionSystem() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className={`h-2 rounded-full transition-all duration-500 ${
-                        algorithm.enabled ? "bg-gradient-to-r from-green-400 to-green-600" : "bg-gray-400"
-                      }`}
+                      className={`h-2 rounded-full transition-all duration-500 ${algorithm.enabled ? "bg-gradient-to-r from-green-400 to-green-600" : "bg-gray-400"
+                        }`}
                       style={{ width: `${algorithm.enabled ? algorithm.accuracy : 0}%` }}
                     />
                   </div>
@@ -399,7 +398,7 @@ export default function FraudDetectionSystem() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Аналитика и отчеты</h1>
-          <p className="text-gray-600 mt-1">Глубокий анализ эффективности системы детекции мошенничества</p>
+          <p className="text-gray-600 mt-1">Глубокий анализ эффективности системы детекции коррупционного риска</p>
         </div>
 
         {/* Ключевые показатели */}
@@ -483,7 +482,7 @@ export default function FraudDetectionSystem() {
             <CardHeader>
               <CardTitle className="text-xl font-semibold text-gray-900">Экономия бюджета</CardTitle>
               <p className="text-sm text-gray-600">
-                График показывает сумму предотвращенного ущерба в миллионах тенге благодаря выявлению мошеннических схем
+                График показывает сумму предотвращенного ущерба в миллионах тенге благодаря выявлению коррупционных рисков
                 системой ИИ
               </p>
             </CardHeader>
@@ -693,76 +692,17 @@ export default function FraudDetectionSystem() {
           </TabsList>
 
           <TabsContent value="api" className="space-y-6">
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-gray-900">Подключение к внешним системам</CardTitle>
-                <p className="text-sm text-gray-600">
-                  Настройте интеграцию с системой электронных государственных закупок (ЕОЗ) и другими внешними сервисами
-                </p>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    API Ключ для доступа к данным ЕОЗ
-                  </label>
-                  <p className="text-xs text-gray-500 mb-2">
-                    Секретный ключ для авторизации запросов к системе государственных закупок
-                  </p>
-                  <div className="flex space-x-2">
-                    <Input
-                      type="password"
-                      value={apiKey}
-                      onChange={(e) => setApiKey(e.target.value)}
-                      placeholder="Введите API ключ"
-                      className="flex-1"
-                    />
-                    <Button variant="outline" onClick={handleTestConnection}>
-                      Тест подключения
-                    </Button>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Webhook URL для уведомлений</label>
-                  <p className="text-xs text-gray-500 mb-2">
-                    URL вашей системы, куда будут отправляться уведомления о выявленных нарушениях
-                  </p>
-                  <Input
-                    value={webhookUrl}
-                    onChange={(e) => setWebhookUrl(e.target.value)}
-                    placeholder="https://your-system.com/webhook"
-                  />
-                </div>
-
-                <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-900">Автоматические уведомления</h3>
-                    <p className="text-sm text-gray-500">
-                      Отправлять мгновенные уведомления при обнаружении контрактов с высоким риском мошенничества
-                    </p>
-                  </div>
-                  <Switch checked={autoNotifications} onCheckedChange={setAutoNotifications} />
-                </div>
-
-                <div className="flex space-x-3">
-                  <Button onClick={handleSaveSettings} className="bg-indigo-600 hover:bg-indigo-700">
-                    Сохранить настройки API
-                  </Button>
-                  <Button variant="outline">Сбросить к умолчаниям</Button>
-                </div>
-              </CardContent>
-            </Card>
 
             <Card className="border-0 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-gray-900">Пример использования API</CardTitle>
                 <p className="text-sm text-gray-600">
-                  Код для интеграции системы детекции мошенничества в ваше приложение
+                  Код для интеграции системы детекции коррупционного риска в ваше приложение
                 </p>
               </CardHeader>
               <CardContent>
                 <pre className="bg-gray-900 text-green-400 p-4 rounded-lg text-sm overflow-x-auto">
-                  {`# Анализ контракта на предмет мошенничества
+                  {`# Анализ контракта на предмет коррупционного риска
 curl -X POST https://api.fraudguard.kz/analyze \\
   -H "Authorization: Bearer ${apiKey}" \\
   -H "Content-Type: application/json" \\
